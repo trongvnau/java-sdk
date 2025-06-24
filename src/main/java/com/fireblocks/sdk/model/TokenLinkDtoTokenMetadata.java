@@ -43,9 +43,9 @@ import java.util.logging.Logger;
 //@JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY)
 @JsonSubTypes({
-    @JsonSubTypes.Type(value = AssetMetadataDto.class, name = "AssetMetadataDto"),
-    @JsonSubTypes.Type(value = CollectionMetadataDto.class, name = "CollectionMetadataDto"),
-    @JsonSubTypes.Type(value = ContractMetadataDto.class, name = "ContractMetadataDto")
+    @JsonSubTypes.Type(AssetMetadataDto.class),
+    @JsonSubTypes.Type(CollectionMetadataDto.class),
+    @JsonSubTypes.Type(ContractMetadataDto.class)
 })
 public class TokenLinkDtoTokenMetadata extends AbstractOpenApiSchema {
 
