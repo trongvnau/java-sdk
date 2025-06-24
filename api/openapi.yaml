@@ -49194,6 +49194,12 @@ components:
       - $ref: '#/components/schemas/AssetMetadataDto'
       - $ref: '#/components/schemas/CollectionMetadataDto'
       - $ref: '#/components/schemas/ContractMetadataDto'
+      discriminator:
+        propertyName: type
+        mapping:
+          AssetMetadataDto: '#/components/schemas/AssetMetadataDto'
+          CollectionMetadataDto: '#/components/schemas/CollectionMetadataDto'
+          ContractMetadataDto: '#/components/schemas/ContractMetadataDto'
     CreateTokenRequestDto_createParams:
       oneOf:
       - $ref: '#/components/schemas/EVMTokenCreateParamsDto'
