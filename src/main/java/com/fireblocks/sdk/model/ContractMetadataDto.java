@@ -34,7 +34,7 @@ import java.util.StringJoiner;
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 //@JsonTypeName("com.fireblocks.sdk.model.ContractMetadataDto")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ContractMetadataDto extends TokenLinkDtoTokenMetadata {
+public class ContractMetadataDto {
 
     public static final String JSON_PROPERTY_ID = "id";
     private String id;
