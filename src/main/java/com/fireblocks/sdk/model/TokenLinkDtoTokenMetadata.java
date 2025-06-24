@@ -130,8 +130,10 @@ public class TokenLinkDtoTokenMetadata extends AbstractOpenApiSchema {
                     // TODO: there is no validation against JSON schema constraints
                     // (min, max, enum, pattern...), this does not perform a strict JSON
                     // validation, which means the 'match' count may be higher than it should be.
-                    deserialized = deserializedObj;
-                    match++;
+                    if (deserializedObj != null) {
+                        deserialized = deserializedObj;
+                        match++;
+                    }
                     log.log(Level.FINER, "Input data matches schema 'AssetMetadataDto'");
                 }
             } catch (Exception e) {
@@ -173,8 +175,10 @@ public class TokenLinkDtoTokenMetadata extends AbstractOpenApiSchema {
                     // TODO: there is no validation against JSON schema constraints
                     // (min, max, enum, pattern...), this does not perform a strict JSON
                     // validation, which means the 'match' count may be higher than it should be.
-                    deserialized = deserializedObj;
-                    match++;
+                    if (deserializedObj != null) {
+                        deserialized = deserializedObj;
+                        match++;
+                    }
                     log.log(Level.FINER, "Input data matches schema 'CollectionMetadataDto'");
                 }
             } catch (Exception e) {
@@ -216,8 +220,10 @@ public class TokenLinkDtoTokenMetadata extends AbstractOpenApiSchema {
                     // TODO: there is no validation against JSON schema constraints
                     // (min, max, enum, pattern...), this does not perform a strict JSON
                     // validation, which means the 'match' count may be higher than it should be.
-                    deserialized = deserializedObj;
-                    match++;
+                    if (deserializedObj != null) {
+                        deserialized = deserializedObj;
+                        match++;
+                    }
                     log.log(Level.FINER, "Input data matches schema 'ContractMetadataDto'");
                 }
             } catch (Exception e) {
