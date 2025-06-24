@@ -40,9 +40,8 @@ import java.util.logging.Logger;
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 @JsonDeserialize(using = TokenLinkDtoTokenMetadata.TokenLinkDtoTokenMetadataDeserializer.class)
 @JsonSerialize(using = TokenLinkDtoTokenMetadata.TokenLinkDtoTokenMetadataSerializer.class)
-@JsonIgnoreProperties(ignoreUnknown = true)
+//@JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY)
-//@JsonTypeInfo(use = JsonTypeInfo.Id.DEDUCTION)
 @JsonSubTypes({
     @JsonSubTypes.Type(value = AssetMetadataDto.class, name = "AssetMetadataDto"),
     @JsonSubTypes.Type(value = CollectionMetadataDto.class, name = "CollectionMetadataDto"),
