@@ -49193,7 +49193,13 @@ components:
       oneOf:
       - $ref: '#/components/schemas/AssetMetadataDto'
       - $ref: '#/components/schemas/CollectionMetadataDto'
-      - $ref: '#/components/schemas/ContractMetadataDto'      
+      - $ref: '#/components/schemas/ContractMetadataDto'     
+      discriminator:
+        propertyName: type
+        mapping:
+          assetMetadataDto: '#/components/schemas/AssetMetadataDto'
+          collectionMetadataDto: '#/components/schemas/CollectionMetadataDto'
+          contractMetadataDto: '#/components/schemas/ContractMetadataDto'
     CreateTokenRequestDto_createParams:
       oneOf:
       - $ref: '#/components/schemas/EVMTokenCreateParamsDto'

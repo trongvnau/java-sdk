@@ -42,22 +42,18 @@ import java.util.logging.Logger;
 //@JsonSerialize(using = TokenLinkDtoTokenMetadata.TokenLinkDtoTokenMetadataSerializer.class)
 //@JsonIgnoreProperties(ignoreUnknown = true)
 
-@JsonTypeInfo(
-        include = JsonTypeInfo.As.EXTERNAL_PROPERTY,
-        use = JsonTypeInfo.Id.NAME,
-        property = "type"
-)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = true)
 // @JsonSubTypes({
 //     @JsonSubTypes.Type(value = AssetMetadataDto.class, name = "assetMetadataDto"),
 //     @JsonSubTypes.Type(value = CollectionMetadataDto.class, name = "collectionMetadataDto"),
 //     @JsonSubTypes.Type(value = ContractMetadataDto.class, name = "contractMetadataDto")
 // })
 
-// @JsonTypeInfo(use = JsonTypeInfo.Id.DEDUCTION)
+//@JsonTypeInfo(use = JsonTypeInfo.Id.DEDUCTION)
 @JsonSubTypes({
-    @JsonSubTypes.Type(AssetMetadataDto.class),
-    @JsonSubTypes.Type(CollectionMetadataDto.class),
-    @JsonSubTypes.Type(ContractMetadataDto.class)
+    @JsonSubTypes.Type(value = AssetMetadataDto.class, name = "assetMetadataDto"),
+    @JsonSubTypes.Type(value = CollectionMetadataDto.class, name = "collectionMetadataDto"),
+    @JsonSubTypes.Type(value = ContractMetadataDto.class, name = "contractMetadataDto")
 })
 public class TokenLinkDtoTokenMetadata extends AbstractOpenApiSchema {
 
