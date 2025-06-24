@@ -97,135 +97,131 @@ public class TokenLinkDtoTokenMetadata extends AbstractOpenApiSchema {
             int match = 0;
             JsonToken token = tree.traverse(jp.getCodec()).nextToken();
             // deserialize AssetMetadataDto
-            // try {
-            //     boolean attemptParsing = true;
-            //     // ensure that we respect type coercion as set on the client ObjectMapper
-            //     if (AssetMetadataDto.class.equals(Integer.class)
-            //             || AssetMetadataDto.class.equals(Long.class)
-            //             || AssetMetadataDto.class.equals(Float.class)
-            //             || AssetMetadataDto.class.equals(Double.class)
-            //             || AssetMetadataDto.class.equals(Boolean.class)
-            //             || AssetMetadataDto.class.equals(String.class)) {
-            //         attemptParsing = typeCoercion;
-            //         if (!attemptParsing) {
-            //             attemptParsing
-            //                     |= ((AssetMetadataDto.class.equals(Integer.class)
-            //                     || AssetMetadataDto.class.equals(Long.class))
-            //                     && token == JsonToken.VALUE_NUMBER_INT);
-            //             attemptParsing
-            //                     |= ((AssetMetadataDto.class.equals(Float.class)
-            //                     || AssetMetadataDto.class.equals(Double.class))
-            //                     && token == JsonToken.VALUE_NUMBER_FLOAT);
-            //             attemptParsing
-            //                     |= (AssetMetadataDto.class.equals(Boolean.class)
-            //                     && (token == JsonToken.VALUE_FALSE
-            //                     || token == JsonToken.VALUE_TRUE));
-            //             attemptParsing
-            //                     |= (AssetMetadataDto.class.equals(String.class)
-            //                     && token == JsonToken.VALUE_STRING);
-            //         }
-            //     }
-            //     if (attemptParsing) {
-            //         deserialized = tree.traverse(jp.getCodec()).readValueAs(AssetMetadataDto.class);
-            //         // TODO: there is no validation against JSON schema constraints
-            //         // (min, max, enum, pattern...), this does not perform a strict JSON
-            //         // validation, which means the 'match' count may be higher than it should be.
-            //         match++;
-            //         log.log(Level.FINER, "Input data matches schema 'AssetMetadataDto'");
-            //     }
-            // } catch (Exception e) {
-            //     // deserialization failed, continue
-            //     log.log(Level.FINER, "Input data does not match schema 'AssetMetadataDto'", e);
-            // }
-
-            // deserialize CollectionMetadataDto
-            if (match == 0) {
-                try {
-                    boolean attemptParsing = true;
-                    // ensure that we respect type coercion as set on the client ObjectMapper
-                    if (CollectionMetadataDto.class.equals(Integer.class)
-                            || CollectionMetadataDto.class.equals(Long.class)
-                            || CollectionMetadataDto.class.equals(Float.class)
-                            || CollectionMetadataDto.class.equals(Double.class)
-                            || CollectionMetadataDto.class.equals(Boolean.class)
-                            || CollectionMetadataDto.class.equals(String.class)) {
-                        attemptParsing = typeCoercion;
-                        if (!attemptParsing) {
-                            attemptParsing
-                                    |= ((CollectionMetadataDto.class.equals(Integer.class)
-                                    || CollectionMetadataDto.class.equals(Long.class))
-                                    && token == JsonToken.VALUE_NUMBER_INT);
-                            attemptParsing
-                                    |= ((CollectionMetadataDto.class.equals(Float.class)
-                                    || CollectionMetadataDto.class.equals(Double.class))
-                                    && token == JsonToken.VALUE_NUMBER_FLOAT);
-                            attemptParsing
-                                    |= (CollectionMetadataDto.class.equals(Boolean.class)
-                                    && (token == JsonToken.VALUE_FALSE
-                                    || token == JsonToken.VALUE_TRUE));
-                            attemptParsing
-                                    |= (CollectionMetadataDto.class.equals(String.class)
-                                    && token == JsonToken.VALUE_STRING);
-                        }
+            try {
+                boolean attemptParsing = true;
+                // ensure that we respect type coercion as set on the client ObjectMapper
+                if (AssetMetadataDto.class.equals(Integer.class)
+                        || AssetMetadataDto.class.equals(Long.class)
+                        || AssetMetadataDto.class.equals(Float.class)
+                        || AssetMetadataDto.class.equals(Double.class)
+                        || AssetMetadataDto.class.equals(Boolean.class)
+                        || AssetMetadataDto.class.equals(String.class)) {
+                    attemptParsing = typeCoercion;
+                    if (!attemptParsing) {
+                        attemptParsing
+                                |= ((AssetMetadataDto.class.equals(Integer.class)
+                                || AssetMetadataDto.class.equals(Long.class))
+                                && token == JsonToken.VALUE_NUMBER_INT);
+                        attemptParsing
+                                |= ((AssetMetadataDto.class.equals(Float.class)
+                                || AssetMetadataDto.class.equals(Double.class))
+                                && token == JsonToken.VALUE_NUMBER_FLOAT);
+                        attemptParsing
+                                |= (AssetMetadataDto.class.equals(Boolean.class)
+                                && (token == JsonToken.VALUE_FALSE
+                                || token == JsonToken.VALUE_TRUE));
+                        attemptParsing
+                                |= (AssetMetadataDto.class.equals(String.class)
+                                && token == JsonToken.VALUE_STRING);
                     }
-                    if (attemptParsing) {
-                        deserialized
-                                = tree.traverse(jp.getCodec()).readValueAs(CollectionMetadataDto.class);
-                        // TODO: there is no validation against JSON schema constraints
-                        // (min, max, enum, pattern...), this does not perform a strict JSON
-                        // validation, which means the 'match' count may be higher than it should be.
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'CollectionMetadataDto'");
-                    }
-                } catch (Exception e) {
-                    // deserialization failed, continue
-                    log.log(Level.FINER, "Input data does not match schema 'CollectionMetadataDto'", e);
                 }
+                if (attemptParsing) {
+                    deserialized = (AssetMetadataDto) tree.traverse(jp.getCodec()).readValueAs(AssetMetadataDto.class);
+                    // TODO: there is no validation against JSON schema constraints
+                    // (min, max, enum, pattern...), this does not perform a strict JSON
+                    // validation, which means the 'match' count may be higher than it should be.
+                    match++;
+                    log.log(Level.FINER, "Input data matches schema 'AssetMetadataDto'");
+                }
+            } catch (Exception e) {
+                // deserialization failed, continue
+                log.log(Level.FINER, "Input data does not match schema 'AssetMetadataDto'", e);
             }
 
-            if (match == 0) {
-                // deserialize ContractMetadataDto
-                try {
-                    boolean attemptParsing = true;
-                    // ensure that we respect type coercion as set on the client ObjectMapper
-                    if (ContractMetadataDto.class.equals(Integer.class)
-                            || ContractMetadataDto.class.equals(Long.class)
-                            || ContractMetadataDto.class.equals(Float.class)
-                            || ContractMetadataDto.class.equals(Double.class)
-                            || ContractMetadataDto.class.equals(Boolean.class)
-                            || ContractMetadataDto.class.equals(String.class)) {
-                        attemptParsing = typeCoercion;
-                        if (!attemptParsing) {
-                            attemptParsing
-                                    |= ((ContractMetadataDto.class.equals(Integer.class)
-                                    || ContractMetadataDto.class.equals(Long.class))
-                                    && token == JsonToken.VALUE_NUMBER_INT);
-                            attemptParsing
-                                    |= ((ContractMetadataDto.class.equals(Float.class)
-                                    || ContractMetadataDto.class.equals(Double.class))
-                                    && token == JsonToken.VALUE_NUMBER_FLOAT);
-                            attemptParsing
-                                    |= (ContractMetadataDto.class.equals(Boolean.class)
-                                    && (token == JsonToken.VALUE_FALSE
-                                    || token == JsonToken.VALUE_TRUE));
-                            attemptParsing
-                                    |= (ContractMetadataDto.class.equals(String.class)
-                                    && token == JsonToken.VALUE_STRING);
-                        }
+            // deserialize CollectionMetadataDto
+            try {
+                boolean attemptParsing = true;
+                // ensure that we respect type coercion as set on the client ObjectMapper
+                if (CollectionMetadataDto.class.equals(Integer.class)
+                        || CollectionMetadataDto.class.equals(Long.class)
+                        || CollectionMetadataDto.class.equals(Float.class)
+                        || CollectionMetadataDto.class.equals(Double.class)
+                        || CollectionMetadataDto.class.equals(Boolean.class)
+                        || CollectionMetadataDto.class.equals(String.class)) {
+                    attemptParsing = typeCoercion;
+                    if (!attemptParsing) {
+                        attemptParsing
+                                |= ((CollectionMetadataDto.class.equals(Integer.class)
+                                || CollectionMetadataDto.class.equals(Long.class))
+                                && token == JsonToken.VALUE_NUMBER_INT);
+                        attemptParsing
+                                |= ((CollectionMetadataDto.class.equals(Float.class)
+                                || CollectionMetadataDto.class.equals(Double.class))
+                                && token == JsonToken.VALUE_NUMBER_FLOAT);
+                        attemptParsing
+                                |= (CollectionMetadataDto.class.equals(Boolean.class)
+                                && (token == JsonToken.VALUE_FALSE
+                                || token == JsonToken.VALUE_TRUE));
+                        attemptParsing
+                                |= (CollectionMetadataDto.class.equals(String.class)
+                                && token == JsonToken.VALUE_STRING);
                     }
-                    if (attemptParsing) {
-                        deserialized
-                                = tree.traverse(jp.getCodec()).readValueAs(ContractMetadataDto.class);
-                        // TODO: there is no validation against JSON schema constraints
-                        // (min, max, enum, pattern...), this does not perform a strict JSON
-                        // validation, which means the 'match' count may be higher than it should be.
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'ContractMetadataDto'");
-                    }
-                } catch (Exception e) {
-                    // deserialization failed, continue
-                    log.log(Level.FINER, "Input data does not match schema 'ContractMetadataDto'", e);
                 }
+                if (attemptParsing) {
+                    deserialized
+                            = (CollectionMetadataDto) tree.traverse(jp.getCodec()).readValueAs(CollectionMetadataDto.class);
+                    // TODO: there is no validation against JSON schema constraints
+                    // (min, max, enum, pattern...), this does not perform a strict JSON
+                    // validation, which means the 'match' count may be higher than it should be.
+                    match++;
+                    log.log(Level.FINER, "Input data matches schema 'CollectionMetadataDto'");
+                }
+            } catch (Exception e) {
+                // deserialization failed, continue
+                log.log(Level.FINER, "Input data does not match schema 'CollectionMetadataDto'", e);
+            }
+
+            // deserialize ContractMetadataDto
+            try {
+                boolean attemptParsing = true;
+                // ensure that we respect type coercion as set on the client ObjectMapper
+                if (ContractMetadataDto.class.equals(Integer.class)
+                        || ContractMetadataDto.class.equals(Long.class)
+                        || ContractMetadataDto.class.equals(Float.class)
+                        || ContractMetadataDto.class.equals(Double.class)
+                        || ContractMetadataDto.class.equals(Boolean.class)
+                        || ContractMetadataDto.class.equals(String.class)) {
+                    attemptParsing = typeCoercion;
+                    if (!attemptParsing) {
+                        attemptParsing
+                                |= ((ContractMetadataDto.class.equals(Integer.class)
+                                || ContractMetadataDto.class.equals(Long.class))
+                                && token == JsonToken.VALUE_NUMBER_INT);
+                        attemptParsing
+                                |= ((ContractMetadataDto.class.equals(Float.class)
+                                || ContractMetadataDto.class.equals(Double.class))
+                                && token == JsonToken.VALUE_NUMBER_FLOAT);
+                        attemptParsing
+                                |= (ContractMetadataDto.class.equals(Boolean.class)
+                                && (token == JsonToken.VALUE_FALSE
+                                || token == JsonToken.VALUE_TRUE));
+                        attemptParsing
+                                |= (ContractMetadataDto.class.equals(String.class)
+                                && token == JsonToken.VALUE_STRING);
+                    }
+                }
+                if (attemptParsing) {
+                    deserialized
+                            = (ContractMetadataDto) tree.traverse(jp.getCodec()).readValueAs(ContractMetadataDto.class);
+                    // TODO: there is no validation against JSON schema constraints
+                    // (min, max, enum, pattern...), this does not perform a strict JSON
+                    // validation, which means the 'match' count may be higher than it should be.
+                    match++;
+                    log.log(Level.FINER, "Input data matches schema 'ContractMetadataDto'");
+                }
+            } catch (Exception e) {
+                // deserialization failed, continue
+                log.log(Level.FINER, "Input data does not match schema 'ContractMetadataDto'", e);
             }
 
             if (match == 1) {
