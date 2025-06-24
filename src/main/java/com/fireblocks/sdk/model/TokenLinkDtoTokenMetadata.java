@@ -126,11 +126,13 @@ public class TokenLinkDtoTokenMetadata extends AbstractOpenApiSchema {
                     }
                 }
                 if (attemptParsing) {
-                    deserialized = (AssetMetadataDto) tree.traverse(jp.getCodec()).readValueAs(AssetMetadataDto.class);
+                    deserialized = tree.traverse(jp.getCodec()).readValueAs(AssetMetadataDto.class);
                     // TODO: there is no validation against JSON schema constraints
                     // (min, max, enum, pattern...), this does not perform a strict JSON
                     // validation, which means the 'match' count may be higher than it should be.
-                    match++;
+                    if (deserialized instanceof AssetMetadataDto) {
+                        match++;
+                    }
                     log.log(Level.FINER, "Input data matches schema 'AssetMetadataDto'");
                 }
             } catch (Exception e) {
@@ -169,11 +171,13 @@ public class TokenLinkDtoTokenMetadata extends AbstractOpenApiSchema {
                 }
                 if (attemptParsing) {
                     deserialized
-                            = (CollectionMetadataDto) tree.traverse(jp.getCodec()).readValueAs(CollectionMetadataDto.class);
+                            = tree.traverse(jp.getCodec()).readValueAs(CollectionMetadataDto.class);
                     // TODO: there is no validation against JSON schema constraints
                     // (min, max, enum, pattern...), this does not perform a strict JSON
                     // validation, which means the 'match' count may be higher than it should be.
-                    match++;
+                    if (deserialized instanceof CollectionMetadataDto) {
+                        match++;
+                    }
                     log.log(Level.FINER, "Input data matches schema 'CollectionMetadataDto'");
                 }
             } catch (Exception e) {
@@ -212,11 +216,13 @@ public class TokenLinkDtoTokenMetadata extends AbstractOpenApiSchema {
                 }
                 if (attemptParsing) {
                     deserialized
-                            = (ContractMetadataDto) tree.traverse(jp.getCodec()).readValueAs(ContractMetadataDto.class);
+                            = tree.traverse(jp.getCodec()).readValueAs(ContractMetadataDto.class);
                     // TODO: there is no validation against JSON schema constraints
                     // (min, max, enum, pattern...), this does not perform a strict JSON
                     // validation, which means the 'match' count may be higher than it should be.
-                    match++;
+                    if (deserialized instanceof ContractMetadataDto) {
+                        match++;
+                    }
                     log.log(Level.FINER, "Input data matches schema 'ContractMetadataDto'");
                 }
             } catch (Exception e) {
