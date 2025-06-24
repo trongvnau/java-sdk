@@ -14,7 +14,7 @@ package com.fireblocks.sdk.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+//import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
@@ -32,7 +32,7 @@ import java.util.StringJoiner;
     CollectionMetadataDto.JSON_PROPERTY_CONTRACT_ADDRESS
 })
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-@JsonTypeName("CollectionMetadataDto")
+//@JsonTypeName("CollectionMetadataDto")
 public class CollectionMetadataDto {
 
     public static final String JSON_PROPERTY_FB_COLLECTION_ID = "fbCollectionId";
