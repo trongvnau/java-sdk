@@ -48,9 +48,9 @@ import java.util.logging.Logger;
         property = "type"
 )
 @JsonSubTypes({
-    @JsonSubTypes.Type(AssetMetadataDto.class),
-    @JsonSubTypes.Type(CollectionMetadataDto.class),
-    @JsonSubTypes.Type(ContractMetadataDto.class)
+    @JsonSubTypes.Type(value = AssetMetadataDto.class, name = "assetMetadataDto"),
+    @JsonSubTypes.Type(value = CollectionMetadataDto.class, name = "collectionMetadataDto"),
+    @JsonSubTypes.Type(value = ContractMetadataDto.class, name = "contractMetadataDto")
 })
 
 // @JsonTypeInfo(use = JsonTypeInfo.Id.DEDUCTION)
