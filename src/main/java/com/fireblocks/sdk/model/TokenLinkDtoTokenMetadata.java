@@ -9,9 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-
 package com.fireblocks.sdk.model;
-
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParser;
@@ -39,11 +37,18 @@ import java.util.logging.Logger;
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 @JsonDeserialize(using = TokenLinkDtoTokenMetadata.TokenLinkDtoTokenMetadataDeserializer.class)
 @JsonSerialize(using = TokenLinkDtoTokenMetadata.TokenLinkDtoTokenMetadataSerializer.class)
+@JsonTypeInfo(use = Id.NAME, include = As.WRAPPER_OBJECT)
+@JsonSubTypes({
+    @JsonSubTypes.Type(AssetMetadataDto.class),
+    @JsonSubTypes.Type(CollectionMetadataDto.class),
+    @JsonSubTypes.Type(ContractMetadataDto.class)})
 public class TokenLinkDtoTokenMetadata extends AbstractOpenApiSchema {
+
     private static final Logger log = Logger.getLogger(TokenLinkDtoTokenMetadata.class.getName());
 
     public static class TokenLinkDtoTokenMetadataSerializer
             extends StdSerializer<TokenLinkDtoTokenMetadata> {
+
         public TokenLinkDtoTokenMetadataSerializer(Class<TokenLinkDtoTokenMetadata> t) {
             super(t);
         }
@@ -62,6 +67,7 @@ public class TokenLinkDtoTokenMetadata extends AbstractOpenApiSchema {
 
     public static class TokenLinkDtoTokenMetadataDeserializer
             extends StdDeserializer<TokenLinkDtoTokenMetadata> {
+
         public TokenLinkDtoTokenMetadataDeserializer() {
             this(TokenLinkDtoTokenMetadata.class);
         }
@@ -90,21 +96,21 @@ public class TokenLinkDtoTokenMetadata extends AbstractOpenApiSchema {
                         || AssetMetadataDto.class.equals(String.class)) {
                     attemptParsing = typeCoercion;
                     if (!attemptParsing) {
-                        attemptParsing |=
-                                ((AssetMetadataDto.class.equals(Integer.class)
-                                                || AssetMetadataDto.class.equals(Long.class))
-                                        && token == JsonToken.VALUE_NUMBER_INT);
-                        attemptParsing |=
-                                ((AssetMetadataDto.class.equals(Float.class)
-                                                || AssetMetadataDto.class.equals(Double.class))
-                                        && token == JsonToken.VALUE_NUMBER_FLOAT);
-                        attemptParsing |=
-                                (AssetMetadataDto.class.equals(Boolean.class)
-                                        && (token == JsonToken.VALUE_FALSE
-                                                || token == JsonToken.VALUE_TRUE));
-                        attemptParsing |=
-                                (AssetMetadataDto.class.equals(String.class)
-                                        && token == JsonToken.VALUE_STRING);
+                        attemptParsing
+                                |= ((AssetMetadataDto.class.equals(Integer.class)
+                                || AssetMetadataDto.class.equals(Long.class))
+                                && token == JsonToken.VALUE_NUMBER_INT);
+                        attemptParsing
+                                |= ((AssetMetadataDto.class.equals(Float.class)
+                                || AssetMetadataDto.class.equals(Double.class))
+                                && token == JsonToken.VALUE_NUMBER_FLOAT);
+                        attemptParsing
+                                |= (AssetMetadataDto.class.equals(Boolean.class)
+                                && (token == JsonToken.VALUE_FALSE
+                                || token == JsonToken.VALUE_TRUE));
+                        attemptParsing
+                                |= (AssetMetadataDto.class.equals(String.class)
+                                && token == JsonToken.VALUE_STRING);
                     }
                 }
                 if (attemptParsing) {
@@ -132,26 +138,26 @@ public class TokenLinkDtoTokenMetadata extends AbstractOpenApiSchema {
                         || CollectionMetadataDto.class.equals(String.class)) {
                     attemptParsing = typeCoercion;
                     if (!attemptParsing) {
-                        attemptParsing |=
-                                ((CollectionMetadataDto.class.equals(Integer.class)
-                                                || CollectionMetadataDto.class.equals(Long.class))
-                                        && token == JsonToken.VALUE_NUMBER_INT);
-                        attemptParsing |=
-                                ((CollectionMetadataDto.class.equals(Float.class)
-                                                || CollectionMetadataDto.class.equals(Double.class))
-                                        && token == JsonToken.VALUE_NUMBER_FLOAT);
-                        attemptParsing |=
-                                (CollectionMetadataDto.class.equals(Boolean.class)
-                                        && (token == JsonToken.VALUE_FALSE
-                                                || token == JsonToken.VALUE_TRUE));
-                        attemptParsing |=
-                                (CollectionMetadataDto.class.equals(String.class)
-                                        && token == JsonToken.VALUE_STRING);
+                        attemptParsing
+                                |= ((CollectionMetadataDto.class.equals(Integer.class)
+                                || CollectionMetadataDto.class.equals(Long.class))
+                                && token == JsonToken.VALUE_NUMBER_INT);
+                        attemptParsing
+                                |= ((CollectionMetadataDto.class.equals(Float.class)
+                                || CollectionMetadataDto.class.equals(Double.class))
+                                && token == JsonToken.VALUE_NUMBER_FLOAT);
+                        attemptParsing
+                                |= (CollectionMetadataDto.class.equals(Boolean.class)
+                                && (token == JsonToken.VALUE_FALSE
+                                || token == JsonToken.VALUE_TRUE));
+                        attemptParsing
+                                |= (CollectionMetadataDto.class.equals(String.class)
+                                && token == JsonToken.VALUE_STRING);
                     }
                 }
                 if (attemptParsing) {
-                    deserialized =
-                            tree.traverse(jp.getCodec()).readValueAs(CollectionMetadataDto.class);
+                    deserialized
+                            = tree.traverse(jp.getCodec()).readValueAs(CollectionMetadataDto.class);
                     // TODO: there is no validation against JSON schema constraints
                     // (min, max, enum, pattern...), this does not perform a strict JSON
                     // validation, which means the 'match' count may be higher than it should be.
@@ -175,26 +181,26 @@ public class TokenLinkDtoTokenMetadata extends AbstractOpenApiSchema {
                         || ContractMetadataDto.class.equals(String.class)) {
                     attemptParsing = typeCoercion;
                     if (!attemptParsing) {
-                        attemptParsing |=
-                                ((ContractMetadataDto.class.equals(Integer.class)
-                                                || ContractMetadataDto.class.equals(Long.class))
-                                        && token == JsonToken.VALUE_NUMBER_INT);
-                        attemptParsing |=
-                                ((ContractMetadataDto.class.equals(Float.class)
-                                                || ContractMetadataDto.class.equals(Double.class))
-                                        && token == JsonToken.VALUE_NUMBER_FLOAT);
-                        attemptParsing |=
-                                (ContractMetadataDto.class.equals(Boolean.class)
-                                        && (token == JsonToken.VALUE_FALSE
-                                                || token == JsonToken.VALUE_TRUE));
-                        attemptParsing |=
-                                (ContractMetadataDto.class.equals(String.class)
-                                        && token == JsonToken.VALUE_STRING);
+                        attemptParsing
+                                |= ((ContractMetadataDto.class.equals(Integer.class)
+                                || ContractMetadataDto.class.equals(Long.class))
+                                && token == JsonToken.VALUE_NUMBER_INT);
+                        attemptParsing
+                                |= ((ContractMetadataDto.class.equals(Float.class)
+                                || ContractMetadataDto.class.equals(Double.class))
+                                && token == JsonToken.VALUE_NUMBER_FLOAT);
+                        attemptParsing
+                                |= (ContractMetadataDto.class.equals(Boolean.class)
+                                && (token == JsonToken.VALUE_FALSE
+                                || token == JsonToken.VALUE_TRUE));
+                        attemptParsing
+                                |= (ContractMetadataDto.class.equals(String.class)
+                                && token == JsonToken.VALUE_STRING);
                     }
                 }
                 if (attemptParsing) {
-                    deserialized =
-                            tree.traverse(jp.getCodec()).readValueAs(ContractMetadataDto.class);
+                    deserialized
+                            = tree.traverse(jp.getCodec()).readValueAs(ContractMetadataDto.class);
                     // TODO: there is no validation against JSON schema constraints
                     // (min, max, enum, pattern...), this does not perform a strict JSON
                     // validation, which means the 'match' count may be higher than it should be.
@@ -214,11 +220,13 @@ public class TokenLinkDtoTokenMetadata extends AbstractOpenApiSchema {
             throw new IOException(
                     String.format(
                             "Failed deserialization for TokenLinkDtoTokenMetadata: %d classes match"
-                                    + " result, expected 1",
+                            + " result, expected 1",
                             match));
         }
 
-        /** Handle deserialization of the 'null' value. */
+        /**
+         * Handle deserialization of the 'null' value.
+         */
         @Override
         public TokenLinkDtoTokenMetadata getNullValue(DeserializationContext ctxt)
                 throws JsonMappingException {
@@ -263,11 +271,13 @@ public class TokenLinkDtoTokenMetadata extends AbstractOpenApiSchema {
     }
 
     /**
-     * Set the instance that matches the oneOf child schema, check the instance parameter is valid
-     * against the oneOf child schemas: AssetMetadataDto, CollectionMetadataDto, ContractMetadataDto
+     * Set the instance that matches the oneOf child schema, check the instance
+     * parameter is valid against the oneOf child schemas: AssetMetadataDto,
+     * CollectionMetadataDto, ContractMetadataDto
      *
-     * <p>It could be an instance of the 'oneOf' schemas. The oneOf child schemas may themselves be
-     * a composed schema (allOf, anyOf, oneOf).
+     * <p>
+     * It could be an instance of the 'oneOf' schemas. The oneOf child schemas
+     * may themselves be a composed schema (allOf, anyOf, oneOf).
      */
     @Override
     public void setActualInstance(Object instance) {
@@ -288,14 +298,15 @@ public class TokenLinkDtoTokenMetadata extends AbstractOpenApiSchema {
 
         throw new RuntimeException(
                 "Invalid instance type. Must be AssetMetadataDto, CollectionMetadataDto,"
-                        + " ContractMetadataDto");
+                + " ContractMetadataDto");
     }
 
     /**
-     * Get the actual instance, which can be the following: AssetMetadataDto, CollectionMetadataDto,
-     * ContractMetadataDto
+     * Get the actual instance, which can be the following: AssetMetadataDto,
+     * CollectionMetadataDto, ContractMetadataDto
      *
-     * @return The actual instance (AssetMetadataDto, CollectionMetadataDto, ContractMetadataDto)
+     * @return The actual instance (AssetMetadataDto, CollectionMetadataDto,
+     * ContractMetadataDto)
      */
     @Override
     public Object getActualInstance() {
@@ -303,8 +314,8 @@ public class TokenLinkDtoTokenMetadata extends AbstractOpenApiSchema {
     }
 
     /**
-     * Get the actual instance of `AssetMetadataDto`. If the actual instance is not
-     * `AssetMetadataDto`, the ClassCastException will be thrown.
+     * Get the actual instance of `AssetMetadataDto`. If the actual instance is
+     * not `AssetMetadataDto`, the ClassCastException will be thrown.
      *
      * @return The actual instance of `AssetMetadataDto`
      * @throws ClassCastException if the instance is not `AssetMetadataDto`
@@ -314,8 +325,9 @@ public class TokenLinkDtoTokenMetadata extends AbstractOpenApiSchema {
     }
 
     /**
-     * Get the actual instance of `CollectionMetadataDto`. If the actual instance is not
-     * `CollectionMetadataDto`, the ClassCastException will be thrown.
+     * Get the actual instance of `CollectionMetadataDto`. If the actual
+     * instance is not `CollectionMetadataDto`, the ClassCastException will be
+     * thrown.
      *
      * @return The actual instance of `CollectionMetadataDto`
      * @throws ClassCastException if the instance is not `CollectionMetadataDto`
@@ -325,8 +337,8 @@ public class TokenLinkDtoTokenMetadata extends AbstractOpenApiSchema {
     }
 
     /**
-     * Get the actual instance of `ContractMetadataDto`. If the actual instance is not
-     * `ContractMetadataDto`, the ClassCastException will be thrown.
+     * Get the actual instance of `ContractMetadataDto`. If the actual instance
+     * is not `ContractMetadataDto`, the ClassCastException will be thrown.
      *
      * @return The actual instance of `ContractMetadataDto`
      * @throws ClassCastException if the instance is not `ContractMetadataDto`

@@ -31,6 +31,7 @@ import java.util.StringJoiner;
     CollectionMetadataDto.JSON_PROPERTY_CONTRACT_ADDRESS
 })
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@JsonTypeName("CollectionMetadataDto")
 public class CollectionMetadataDto {
     public static final String JSON_PROPERTY_FB_COLLECTION_ID = "fbCollectionId";
     private String fbCollectionId;
