@@ -44,7 +44,7 @@ import java.util.StringJoiner;
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 //@JsonTypeName("com.fireblocks.sdk.model.AssetMetadataDto")
 //@JsonIgnoreProperties(ignoreUnknown = true)
-@JsonIgnoreProperties(ignoreUnknown = true)
+//@JsonIgnoreProperties(ignoreUnknown = true)
 public class AssetMetadataDto {
 
     public static final String JSON_PROPERTY_ASSET_ID = "assetId";

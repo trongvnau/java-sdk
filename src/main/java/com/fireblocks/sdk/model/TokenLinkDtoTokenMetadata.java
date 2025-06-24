@@ -40,13 +40,14 @@ import java.util.logging.Logger;
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 @JsonDeserialize(using = TokenLinkDtoTokenMetadata.TokenLinkDtoTokenMetadataDeserializer.class)
 @JsonSerialize(using = TokenLinkDtoTokenMetadata.TokenLinkDtoTokenMetadataSerializer.class)
-//@JsonIgnoreProperties(ignoreUnknown = true)
-// @JsonTypeInfo(use = JsonTypeInfo.Id.DEDUCTION)
-// @JsonSubTypes({   
-//     @JsonSubTypes.Type(AssetMetadataDto.class),
-//     @JsonSubTypes.Type(CollectionMetadataDto.class),
-//     @JsonSubTypes.Type(ContractMetadataDto.class)
-// })
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY)
+//@JsonTypeInfo(use = JsonTypeInfo.Id.DEDUCTION)
+@JsonSubTypes({
+    @JsonSubTypes.Type(value = AssetMetadataDto.class, name = "AssetMetadataDto"),
+    @JsonSubTypes.Type(value = CollectionMetadataDto.class, name = "CollectionMetadataDto"),
+    @JsonSubTypes.Type(value = ContractMetadataDto.class, name = "ContractMetadataDto")
+})
 public class TokenLinkDtoTokenMetadata extends AbstractOpenApiSchema {
 
     private static final Logger log = Logger.getLogger(TokenLinkDtoTokenMetadata.class.getName());
