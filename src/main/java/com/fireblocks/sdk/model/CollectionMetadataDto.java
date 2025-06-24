@@ -34,8 +34,8 @@ import java.util.StringJoiner;
 })
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 //@JsonTypeName("com.fireblocks.sdk.model.CollectionMetadataDto")
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class CollectionMetadataDto {
+//@JsonIgnoreProperties(ignoreUnknown = true)
+public class CollectionMetadataDto implements TokenLinkDtoTokenMetadata {
 
     public static final String JSON_PROPERTY_FB_COLLECTION_ID = "fbCollectionId";
     private String fbCollectionId;

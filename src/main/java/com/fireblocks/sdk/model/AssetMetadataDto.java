@@ -43,8 +43,8 @@ import java.util.StringJoiner;
 })
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 //@JsonTypeName("com.fireblocks.sdk.model.AssetMetadataDto")
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class AssetMetadataDto {
+//@JsonIgnoreProperties(ignoreUnknown = true)
+public class AssetMetadataDto implements TokenLinkDtoTokenMetadata {
 
     public static final String JSON_PROPERTY_ASSET_ID = "assetId";
     private String assetId;
