@@ -42,7 +42,11 @@ import java.util.logging.Logger;
 //@JsonSerialize(using = TokenLinkDtoTokenMetadata.TokenLinkDtoTokenMetadataSerializer.class)
 //@JsonIgnoreProperties(ignoreUnknown = true)
 
-@JsonTypeInfo(use = JsonTypeInfo.Id.DEDUCTION)
+@JsonTypeInfo(
+        include = JsonTypeInfo.As.EXTERNAL_PROPERTY,
+        use = JsonTypeInfo.Id.NAME,
+        property = "type"
+)
 @JsonSubTypes({
     @JsonSubTypes.Type(value = AssetMetadataDto.class, name = "assetMetadataDto"),
     @JsonSubTypes.Type(value = CollectionMetadataDto.class, name = "collectionMetadataDto"),
