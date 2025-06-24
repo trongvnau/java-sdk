@@ -31,7 +31,6 @@ import java.util.StringJoiner;
     ContractMetadataDto.JSON_PROPERTY_VAULT_ACCOUNT_ID
 })
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-@JsonTypeName("contractMetadataDto")
 public class ContractMetadataDto {
 
     public static final String JSON_PROPERTY_ID = "id";
