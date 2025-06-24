@@ -41,7 +41,7 @@ import java.util.StringJoiner;
     AssetMetadataDto.JSON_PROPERTY_VAULT_ACCOUNT_ID
 })
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-//@JsonTypeName("AssetMetadataDto")
+@JsonTypeName("com.fireblocks.sdk.model.AssetMetadataDto")
 public class AssetMetadataDto {
 
     public static final String JSON_PROPERTY_ASSET_ID = "assetId";
