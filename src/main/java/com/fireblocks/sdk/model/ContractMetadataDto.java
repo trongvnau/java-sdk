@@ -9,19 +9,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-
 package com.fireblocks.sdk.model;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 import java.util.StringJoiner;
 
-/** ContractMetadataDto */
+/**
+ * ContractMetadataDto
+ */
 @JsonPropertyOrder({
     ContractMetadataDto.JSON_PROPERTY_ID,
     ContractMetadataDto.JSON_PROPERTY_BLOCKCHAIN_ID,
@@ -32,6 +33,7 @@ import java.util.StringJoiner;
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 @JsonTypeName("ContractMetadataDto")
 public class ContractMetadataDto {
+
     public static final String JSON_PROPERTY_ID = "id";
     private String id;
 
@@ -47,7 +49,8 @@ public class ContractMetadataDto {
     public static final String JSON_PROPERTY_VAULT_ACCOUNT_ID = "vaultAccountId";
     private String vaultAccountId;
 
-    public ContractMetadataDto() {}
+    public ContractMetadataDto() {
+    }
 
     public ContractMetadataDto id(String id) {
         this.id = id;
@@ -164,7 +167,9 @@ public class ContractMetadataDto {
         this.vaultAccountId = vaultAccountId;
     }
 
-    /** Return true if this ContractMetadataDto object is equal to o. */
+    /**
+     * Return true if this ContractMetadataDto object is equal to o.
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -202,8 +207,8 @@ public class ContractMetadataDto {
     }
 
     /**
-     * Convert the given object to string with each line indented by 4 spaces (except the first
-     * line).
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
      */
     private String toIndentedString(Object o) {
         if (o == null) {
@@ -263,8 +268,8 @@ public class ContractMetadataDto {
                             prefix,
                             suffix,
                             URLEncoder.encode(
-                                            String.valueOf(getBlockchainId()),
-                                            StandardCharsets.UTF_8)
+                                    String.valueOf(getBlockchainId()),
+                                    StandardCharsets.UTF_8)
                                     .replaceAll("\\+", "%20")));
         }
 
@@ -276,8 +281,8 @@ public class ContractMetadataDto {
                             prefix,
                             suffix,
                             URLEncoder.encode(
-                                            String.valueOf(getContractAddress()),
-                                            StandardCharsets.UTF_8)
+                                    String.valueOf(getContractAddress()),
+                                    StandardCharsets.UTF_8)
                                     .replaceAll("\\+", "%20")));
         }
 
@@ -289,8 +294,8 @@ public class ContractMetadataDto {
                             prefix,
                             suffix,
                             URLEncoder.encode(
-                                            String.valueOf(getContractTemplateId()),
-                                            StandardCharsets.UTF_8)
+                                    String.valueOf(getContractTemplateId()),
+                                    StandardCharsets.UTF_8)
                                     .replaceAll("\\+", "%20")));
         }
 
@@ -302,8 +307,8 @@ public class ContractMetadataDto {
                             prefix,
                             suffix,
                             URLEncoder.encode(
-                                            String.valueOf(getVaultAccountId()),
-                                            StandardCharsets.UTF_8)
+                                    String.valueOf(getVaultAccountId()),
+                                    StandardCharsets.UTF_8)
                                     .replaceAll("\\+", "%20")));
         }
 

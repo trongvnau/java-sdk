@@ -9,19 +9,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-
 package com.fireblocks.sdk.model;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 import java.util.StringJoiner;
 
-/** CollectionMetadataDto */
+/**
+ * CollectionMetadataDto
+ */
 @JsonPropertyOrder({
     CollectionMetadataDto.JSON_PROPERTY_FB_COLLECTION_ID,
     CollectionMetadataDto.JSON_PROPERTY_NAME,
@@ -33,6 +34,7 @@ import java.util.StringJoiner;
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 @JsonTypeName("CollectionMetadataDto")
 public class CollectionMetadataDto {
+
     public static final String JSON_PROPERTY_FB_COLLECTION_ID = "fbCollectionId";
     private String fbCollectionId;
 
@@ -51,7 +53,8 @@ public class CollectionMetadataDto {
     public static final String JSON_PROPERTY_CONTRACT_ADDRESS = "contractAddress";
     private String contractAddress;
 
-    public CollectionMetadataDto() {}
+    public CollectionMetadataDto() {
+    }
 
     public CollectionMetadataDto fbCollectionId(String fbCollectionId) {
         this.fbCollectionId = fbCollectionId;
@@ -191,7 +194,9 @@ public class CollectionMetadataDto {
         this.contractAddress = contractAddress;
     }
 
-    /** Return true if this CollectionMetadataDto object is equal to o. */
+    /**
+     * Return true if this CollectionMetadataDto object is equal to o.
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -233,8 +238,8 @@ public class CollectionMetadataDto {
     }
 
     /**
-     * Convert the given object to string with each line indented by 4 spaces (except the first
-     * line).
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
      */
     private String toIndentedString(Object o) {
         if (o == null) {
@@ -283,8 +288,8 @@ public class CollectionMetadataDto {
                             prefix,
                             suffix,
                             URLEncoder.encode(
-                                            String.valueOf(getFbCollectionId()),
-                                            StandardCharsets.UTF_8)
+                                    String.valueOf(getFbCollectionId()),
+                                    StandardCharsets.UTF_8)
                                     .replaceAll("\\+", "%20")));
         }
 
@@ -329,8 +334,8 @@ public class CollectionMetadataDto {
                             prefix,
                             suffix,
                             URLEncoder.encode(
-                                            String.valueOf(getBlockchainDescriptor()),
-                                            StandardCharsets.UTF_8)
+                                    String.valueOf(getBlockchainDescriptor()),
+                                    StandardCharsets.UTF_8)
                                     .replaceAll("\\+", "%20")));
         }
 
@@ -342,8 +347,8 @@ public class CollectionMetadataDto {
                             prefix,
                             suffix,
                             URLEncoder.encode(
-                                            String.valueOf(getContractAddress()),
-                                            StandardCharsets.UTF_8)
+                                    String.valueOf(getContractAddress()),
+                                    StandardCharsets.UTF_8)
                                     .replaceAll("\\+", "%20")));
         }
 
