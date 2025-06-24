@@ -14,6 +14,7 @@ package com.fireblocks.sdk.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.math.BigDecimal;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
@@ -39,6 +40,7 @@ import java.util.StringJoiner;
     AssetMetadataDto.JSON_PROPERTY_VAULT_ACCOUNT_ID
 })
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@JsonTypeName("assetMetadataDto")
 public class AssetMetadataDto {
 
     public static final String JSON_PROPERTY_ASSET_ID = "assetId";

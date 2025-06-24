@@ -41,12 +41,24 @@ import java.util.logging.Logger;
 //@JsonDeserialize(using = TokenLinkDtoTokenMetadata.TokenLinkDtoTokenMetadataDeserializer.class)
 //@JsonSerialize(using = TokenLinkDtoTokenMetadata.TokenLinkDtoTokenMetadataSerializer.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-@JsonTypeInfo(use = JsonTypeInfo.Id.DEDUCTION)
+
+@JsonTypeInfo(
+        use = JsonTypeInfo.Id.NAME,
+        include = JsonTypeInfo.As.PROPERTY,
+        property = "type"
+)
 @JsonSubTypes({
     @JsonSubTypes.Type(AssetMetadataDto.class),
     @JsonSubTypes.Type(CollectionMetadataDto.class),
     @JsonSubTypes.Type(ContractMetadataDto.class)
 })
+
+// @JsonTypeInfo(use = JsonTypeInfo.Id.DEDUCTION)
+// @JsonSubTypes({
+//     @JsonSubTypes.Type(AssetMetadataDto.class),
+//     @JsonSubTypes.Type(CollectionMetadataDto.class),
+//     @JsonSubTypes.Type(ContractMetadataDto.class)
+// })
 public class TokenLinkDtoTokenMetadata extends AbstractOpenApiSchema {
 
     private static final Logger log = Logger.getLogger(TokenLinkDtoTokenMetadata.class.getName());
