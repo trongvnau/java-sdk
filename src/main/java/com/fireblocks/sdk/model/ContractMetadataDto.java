@@ -31,8 +31,8 @@ import java.util.StringJoiner;
     ContractMetadataDto.JSON_PROPERTY_VAULT_ACCOUNT_ID
 })
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-@JsonTypeName("com.fireblocks.sdk.model.ContractMetadataDto")
-public class ContractMetadataDto {
+//@JsonTypeName("com.fireblocks.sdk.model.ContractMetadataDto")
+public class ContractMetadataDto extends TokenLinkDtoTokenMetadata {
 
     public static final String JSON_PROPERTY_ID = "id";
     private String id;
